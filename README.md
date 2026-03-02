@@ -175,14 +175,22 @@ Execute macro a on all lines in the visual selection.
 
 Executre macrr a on all lines matching pattern.
 
+### Reformatting Text to a specified textwidth
+
+When a text is visually selected use:
+```
+gq
+```
+
 ## Todos
 
 Following points should still be improved upon.
 
 - [ ] Terminal handling for various tasks like git and running a program
 - [ ] maybe implement a git integration in some way
-- [ ] customize the status line :help 'statusline'
+- [ ] customize the status line :help 'statusline
 - [ ] customize syntax files for certain languages
+- [ ] spell lang per document or project
 
 ### C programming
 

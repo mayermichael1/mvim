@@ -9,3 +9,6 @@ vim.opt.path:append({"**"})
 
 -- mouse
 vim.opt.mouse=""
+
+-- for latex documents
+vim.g.tex_flavor="latex"
