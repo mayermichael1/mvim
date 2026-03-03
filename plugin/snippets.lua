@@ -2,7 +2,7 @@ function vim.snippet.add(trigger, body, opts)
     vim.keymap.set("ia", trigger, function()
 
         local num = vim.fn.getchar(0)
-        local c = vim.fn.nr2char(c)
+        local c = vim.fn.nr2char(num)
 
         -- by default <c-]> also completes an abbreviation
         -- by using below code only this form of completion is allowed
