@@ -11,8 +11,7 @@ vim.snippet.add(
 [=[
 \begin{$1}
   $2
-\end{$1}
-]=],
+\end{$1}]=],
     opts
 )
 
@@ -24,8 +23,7 @@ vim.snippet.add(
   \includegraphics[width=\textwidth]{./$1}
   \label{$2}
   \caption{$3}
-\end{figure}
-]=],
+\end{figure}]=],
     opts
 )
 
@@ -40,8 +38,7 @@ vim.snippet.add(
       $3
     \end{tabular} 
   \end{center}
-\end{table}
-]=],
+\end{table}]=],
     opts
 )
 
@@ -49,8 +46,7 @@ vim.snippet.add(
    "code",
 [=[
 \begin{verbatim}
-\end{verbatim}
-]=],
+\end{verbatim}]=],
     opts
 )
 
@@ -58,16 +54,14 @@ vim.snippet.add(
    "```",
 [=[
 \begin{verbatim}
-\end{verbatim}
-]=],
+\end{verbatim}]=],
     opts
 )
 
 vim.snippet.add(
     "codeinc",
 [=[
-\lstinputlisting[language=$1]{./$2}
-]=],
+\lstinputlisting[language=$1]{./$2}]=],
     opts
 )
 
@@ -76,24 +70,21 @@ vim.snippet.add(
 vim.snippet.add( 
     "**",
 [=[
-\textbf{$1}
-]=],
+\textbf{$1}]=],
     opts
 )
 
 vim.snippet.add(
     "*",
 [=[
-\textit{$1}
-]=],
+\textit{$1}]=],
     opts
 )
 
 vim.snippet.add(
     "href",
 [=[
-\href{$1}{$2}
-]=],
+\href{$1}{$2}]=],
     opts
 )
 
@@ -102,8 +93,7 @@ vim.snippet.add(
 [=[
 \begin{itemize}
   \item $1 
-\end{itemize}
-]=],
+\end{itemize}]=],
     opts
 )
 
@@ -112,8 +102,7 @@ vim.snippet.add(
 [=[
 \begin{enumerate}
   \item $1 
-\end{enumerate}
-]=],
+\end{enumerate}]=],
     opts
 )
 
@@ -123,8 +112,7 @@ vim.snippet.add(
 \begin{description}
   \item [$1]
     $2
-\end{description}
-]=],
+\end{description}]=],
     opts
 )
 
@@ -133,24 +121,21 @@ vim.snippet.add(
 vim.snippet.add(
     "#",
 [=[
-\section{$1}
-]=],
+\section{$1}]=],
     opts
 )
 
 vim.snippet.add(
     "##",
 [=[
-\subsection{$1}
-]=],
+\subsection{$1}]=],
     opts
 )
 
 vim.snippet.add(
     "###",
 [=[
-\subsubsection{$1}
-]=],
+\subsubsection{$1}]=],
     opts
 )
 
@@ -161,8 +146,7 @@ vim.snippet.add(
 [=[
 \begin{equation*}
   $1
-\end{equation*}
-]=],
+\end{equation*}]=],
     opts
 )
 
@@ -171,8 +155,7 @@ vim.snippet.add(
 [=[
 \begin{align*}
   $1
-\end{align*}
-]=],
+\end{align*}]=],
     opts
 )
 
@@ -181,24 +164,21 @@ vim.snippet.add(
 [=[
 \begin{matrix}
     ${1: c & c & \}
-\end{matrix}
-]=],
+\end{matrix}]=],
     opts
 )
 
 vim.snippet.add(
     "\\f",
 [=[
-\frac{ $1 }{ $2 }
-]=],
+\frac{ $1 }{ $2 }]=],
     opts
 )
 
 vim.snippet.add(
     "qty",
 [=[
-\qty{ $1 }{ $2 }
-]=],
+\qty{ $1 }{ $2 }]=],
     opts
 )
 
@@ -212,8 +192,7 @@ vim.snippet.add(
   \draw[->] (0, 0) -- (10,0) node[below]{$x$};
 
   \draw plot (\x,{sin(\x r)});
-\end{tikzpicture}
-]=],
+\end{tikzpicture}]=],
     opts
 )
 
@@ -224,8 +203,7 @@ vim.snippet.add(
   \draw[step=0.5, very thin, gray!25] (-5, -5) grid (5, 5);
   \draw[->] (0, -5) -- (0,5) node[right]{$y$};
   \draw[->] (-5, 0) -- (5,0) node[below]{$x$};
-\end{tikzpicture}
-]=],
+\end{tikzpicture}]=],
     opts
 )
 
@@ -234,8 +212,7 @@ vim.snippet.add(
 vim.snippet.add(
     "packcircuit",
 [=[
-    \usepackage[european,straightvoltages]{circuitikz}
-]=],
+    \usepackage[european,straightvoltages]{circuitikz}]=],
     opts
 )
 
@@ -261,7 +238,6 @@ vim.snippet.add(
   \end{circuitikz}
   \label{$1}
   \caption{$2}
-\end{figure}
-]=],
+\end{figure}]=],
     opts
 )
