@@ -14,3 +14,7 @@ vim.opt.mouse=""
 
 -- for latex documents
 vim.g.tex_flavor="latex"
+
+-- file encodings, formatting and more
+vim.g.fileencoding="utf-8"
+vim.g.fileformat="unix"
