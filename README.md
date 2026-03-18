@@ -191,6 +191,8 @@ Following points should still be improved upon.
 - [ ] customize the status line :help 'statusline
 - [ ] customize syntax files for certain languages
 - [ ] spell lang per document or project
+- [ ] some tex files to not load syntax correctly on first load `:syntax on`re-enables this 
+- [ ] show code - hierarchie in status line should be doable with some {{ matching
 
 ### C programming
 
