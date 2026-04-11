@@ -6,3 +6,6 @@ vim.opt.wrap=false
 
 vim.cmd.colorscheme("wildcharm")
 
+-- enable new ui experimentally
+require('vim._core.ui2').enable()
+
