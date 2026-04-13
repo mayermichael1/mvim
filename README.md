@@ -182,7 +182,7 @@ When a text is visually selected use:
 gq
 ```
 
-## Todos
+## TODO 
 
 Following points should still be improved upon.
 
@@ -193,6 +193,8 @@ Following points should still be improved upon.
 - [ ] spell lang per document or project
 - [ ] some tex files to not load syntax correctly on first load `:syntax on`re-enables this 
 - [ ] show code - hierarchie in status line should be doable with some {{ matching
+- [ ] many spelling mistakes notably slows down the editor. Maybe disable
+  spellchecking when to many errors occur
 
 ### C programming
 
