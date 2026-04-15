@@ -21,8 +21,8 @@ vim.snippet.add(
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=\textwidth]{./$1}
-  \label{$2}
-  \caption{$3}
+  \caption{$2}
+  \label{$3}
 \end{figure}]=],
     opts
 )
