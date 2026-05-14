@@ -195,6 +195,7 @@ Following points should still be improved upon.
 - [ ] show code - hierarchie in status line should be doable with some {{ matching
 - [ ] many spelling mistakes notably slows down the editor. Maybe disable
   spellchecking when to many errors occur
+- [ ] dealing with merge conflicts 
 
 ### C programming
 
