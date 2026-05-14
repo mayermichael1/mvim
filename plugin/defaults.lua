@@ -5,6 +5,8 @@ vim.opt.expandtab = true        -- use spaces instead of tabs
 
 -- Searching
 vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 -- try without for a while 
 -- should give a better overview over the current projects structure 
 -- vim.opt.path:append({"**"})
