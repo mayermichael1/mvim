@@ -196,6 +196,7 @@ Following points should still be improved upon.
 - [ ] many spelling mistakes notably slows down the editor. Maybe disable
   spellchecking when to many errors occur
 - [ ] dealing with merge conflicts 
+- [ ] replacing with gc does not highlight the current word to be replaced
 
 ### C programming
 
