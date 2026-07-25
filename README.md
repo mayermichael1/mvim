@@ -186,17 +186,17 @@ gq
 
 Following points should still be improved upon.
 
-- [ ] Terminal handling for various tasks like git and running a program
-- [ ] maybe implement a git integration in some way
+- [ ] replacing with gc does not highlight the current word to be replaced
 - [ ] customize the status line :help 'statusline
 - [ ] customize syntax files for certain languages
 - [ ] spell lang per document or project
+- [ ] maybe implement a git integration in some way
+- [ ] Terminal handling for various tasks like git and running a program
 - [ ] some tex files to not load syntax correctly on first load `:syntax on`re-enables this 
-- [ ] show code - hierarchie in status line should be doable with some {{ matching
+- [ ] show code - hierarchy in status line should be doable with some {{ matching
 - [ ] many spelling mistakes notably slows down the editor. Maybe disable
   spellchecking when to many errors occur
 - [ ] dealing with merge conflicts 
-- [ ] replacing with gc does not highlight the current word to be replaced
 
 ### C programming
 
