@@ -60,6 +60,11 @@ Other languages than "en" need a spelling file *.spl in `/home/$USER/.local/shar
 These files should be downloaded automatically. This however does not work.
 These files can be downloaded from: [Spell File FTP](https://ftp.nluug.nl/vim/runtime/spell)
 
+Currently spell checking is enabled for `*.md` and `*.tex` files for both German
+and English.
+To only use one of these languages for a file a local configuration file can be
+created containing only the desired spell checking language. 
+
 ### Folds
 
 To create a toggle:
@@ -189,7 +194,6 @@ Following points should still be improved upon.
 - [ ] replacing with gc does not highlight the current word to be replaced
 - [ ] customize the status line :help 'statusline
 - [ ] customize syntax files for certain languages
-- [ ] spell lang per document or project
 - [ ] maybe implement a git integration in some way
 - [ ] Terminal handling for various tasks like git and running a program
 - [ ] some tex files to not load syntax correctly on first load `:syntax on`re-enables this 
