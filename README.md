@@ -193,7 +193,6 @@ Following points should still be improved upon.
 
 - [ ] replacing with gc does not highlight the current word to be replaced
 - [ ] customize the status line :help 'statusline
-- [ ] customize syntax files for certain languages
 - [ ] maybe implement a git integration in some way
 - [ ] Terminal handling for various tasks like git and running a program
 - [ ] some tex files to not load syntax correctly on first load `:syntax on`re-enables this 
@@ -204,6 +203,6 @@ Following points should still be improved upon.
 
 ### C programming
 
-- [ ] ctags
+- [ ] ctags (auto create or creation command?)
 - [ ] TermDebug package for gdb integration
 
