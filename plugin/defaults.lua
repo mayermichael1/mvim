@@ -4,7 +4,7 @@ vim.opt.softtabstop = -1        -- take the value from shiftwidth
 vim.opt.expandtab = true        -- use spaces instead of tabs
 
 -- Searching
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 -- try without for a while 
