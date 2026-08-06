@@ -191,6 +191,7 @@ gq
 
 Following points should still be improved upon.
 
+- [ ] create command :Ff which basically does command `:find ./**/**<text>`
 - [ ] replacing with gc does not highlight the current word to be replaced
 - [ ] customize the status line :help 'statusline
 - [ ] maybe implement a git integration in some way
