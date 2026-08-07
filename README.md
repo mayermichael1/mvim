@@ -248,38 +248,40 @@ All themes:
 01. catppuccin
 02. wildcharm
 03. lunaperche
-04. retrobox
-05. default
-06. peachpuff
-07. shine
-08. zellner
-09. delek
+04. shine
+05. zellner
+06. delek
+07. retrobox
+08. peachpuff
+09. default
 10. morning
-11. quiet
-12. vim (does not work with system theme and background)
+
+- quiet
+- vim (does not work with system theme and background)
 
 ## colorscheme dark rating
 
-01. catppuccin
-02. wildcharm
-03. lunaperche
-04. retrobox
-05. slate
-06. default
-07. sorbet
-08. unokai
+01. retrobox
+02. catppuccin
+03. wildcharm
+04. slate
+05. unokai
+06. sorbet
+07. lunaperche
+08. evening
 09. desert
-10. evening
-11. habamax
-12. zaibatsu
-13. koehler
-14. quiet
-15. torte
-16. industry
+10. habamax
+11. zaibatsu
+12. torte
+13. default
+14. koehler
+15. industry
+16. pablo
 17. murphy
-18. pablo
-19. darkblue
-20. ron
-21. elflord
-22. blue
-23. vim (does not work with system theme and background) 
+18. darkblue
+19. ron
+20. elflord
+21. blue
+
+- vim (does not work with system theme and background) 
+- quiet (does not do much)
