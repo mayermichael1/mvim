@@ -52,7 +52,7 @@ Enable spell checking:
 :set spell spelllang=<langcode>
 ```
 
-A missspelled word can be checked with `z=`. 
+A misspelled word can be checked with `z=`. 
 The commands `]s` and `[s` may be used to navigate to the next or previous 
 spelling error.
 
@@ -207,3 +207,79 @@ Following points should still be improved upon.
 - [ ] ctags (auto create or creation command?)
 - [ ] TermDebug package for gdb integration
 
+# Default Colorscheme Ranking 
+
+All themes: 
+
+|theme      |light|dark|
+|-----------|-|-|
+|blue       | |x|
+|catppuccin |x|x|
+|darkblue   | |x|
+|default    |x|x|
+|delek      |x| |
+|desert     | |x|
+|elflord    | |x|
+|evening    | |x|
+|habamax    | |x|
+|industry   | |x|
+|koehler    | |x|
+|lunaperche |x|x|
+|morning    |x| |
+|murphy     | |x|
+|pablo      | |x|
+|peachpuff  |x| |
+|quiet      |x|x|
+|retrobox   |x|x|
+|ron        | |x|
+|shine      |x| |
+|slate      | |x|
+|sorbet     | |x|
+|torte      | |x|
+|unokai     | |x|
+|vim        |x|x|
+|wildcharm  |x|x|
+|zaibatsu   | |x|
+|zeller     |x| |
+
+
+## colorscheme light rating 
+
+01. catppuccin
+02. wildcharm
+03. lunaperche
+04. retrobox
+05. default
+06. peachpuff
+07. shine
+08. zellner
+09. delek
+10. morning
+11. quiet
+12. vim (does not work with system theme and background)
+
+## colorscheme dark rating
+
+01. catppuccin
+02. wildcharm
+03. lunaperche
+04. retrobox
+05. slate
+06. default
+07. sorbet
+08. unokai
+09. desert
+10. evening
+11. habamax
+12. zaibatsu
+13. koehler
+14. quiet
+15. torte
+16. industry
+17. murphy
+18. pablo
+19. darkblue
+20. ron
+21. elflord
+22. blue
+23. vim (does not work with system theme and background) 
