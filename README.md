@@ -191,6 +191,9 @@ gq
 
 Following points should still be improved upon.
 
+- [ ] change tab names 
+- [ ] "code actions" should be enabled with gra to be consistent with the
+  standard
 - [ ] create command :Ff which basically does command `:find ./**/**<text>`
 - [ ] replacing with gc does not highlight the current word to be replaced
 - [ ] customize the status line :help 'statusline
