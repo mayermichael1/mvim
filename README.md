@@ -191,14 +191,15 @@ gq
 
 Following points should still be improved upon.
 
+- [ ] custom terminals are currently working but not really great. fix it
 - [ ] change tab names 
 - [ ] "code actions" should be enabled with gra to be consistent with the
   standard
 - [ ] create command :Ff which basically does command `:find ./**/**<text>`
-- [ ] replacing with gc does not highlight the current word to be replaced
+- [x] replacing with gc does not highlight the current word to be replaced
 - [ ] customize the status line :help 'statusline
-- [ ] maybe implement a git integration in some way
-- [ ] Terminal handling for various tasks like git and running a program
+- [x] maybe implement a git integration in some way
+- [x] Terminal handling for various tasks like git and running a program
 - [ ] some tex files to not load syntax correctly on first load `:syntax on`re-enables this 
 - [ ] show code - hierarchy in status line should be doable with some {{ matching
 - [ ] many spelling mistakes notably slows down the editor. Maybe disable
