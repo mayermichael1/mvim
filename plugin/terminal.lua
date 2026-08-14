@@ -1,8 +1,5 @@
-local function print_list(list)
-    for key, value in pairs(list) do 
-        print(value);
-    end
-end
+-- generally this section does work but is not really clean
+-- i do not really know how lua works and it shows
 
 local function in_list(list, needle)
     local found = false;
@@ -14,6 +11,7 @@ local function in_list(list, needle)
     return found;
 end
 
+-- TODO: better way to create empty objects?
 local function view_empty()
     local empty = {};
     empty.buffer = 0;
@@ -43,49 +41,50 @@ local function set_view(a, b)
 end
 
 
-local function spawn(opts, object)
-    local current = view_current();
-
-    if view_equal(current, object) then
-        print("nothing to do already here");
-    else
+local function spawn_or_switch(object, command, command_prefix)
+    if not view_equal(view_current(), object) then
         if in_list(vim.api.nvim_list_tabpages(), object.tab) then
             vim.cmd.normal(object.tab .. "gt"); 
         else
-            vim.cmd('tab split');
+            vim.cmd('$tab split');
         end
 
         if in_list(vim.api.nvim_list_bufs(), object.buffer) then
             vim.cmd('buffer ' .. object.buffer);
         else
             vim.cmd('terminal');
+            vim.fn.chansend(vim.bo.channel, "clear \r\n");
         end
 
         set_view(object, view_current());
     end
+
+    if command ~= nil and command ~= "" then
+        local channel = view_current().channel;
+        local complete_command = string.format("%s %s \r\n",command_prefix, command)
+        vim.fn.chansend(channel, {complete_command})
+    end
+end
+
+local function create_terminal_command(name, prefix)
+    local obj = view_empty();
+
+    if prefix == nil then
+        prefix = "";
+    end
+
+    vim.api.nvim_create_user_command(
+        name,
+        function(opts)
+            spawn_or_switch(obj, opts.args, prefix);
+        end,
+        {
+            nargs = "?",
+            desc = 'Spawn a Terminal for ' .. name .. ' commands'
+        }
+    )
 end
 
 -- actual configuration 
-
-local git = view_empty();
-local run_term = view_empty();
-
-vim.api.nvim_create_user_command(
-    'Git',
-    function(opts)
-        spawn(opts, git);
-    end,
-    {
-        desc = 'Spawn a Terminal for Git commands'
-    }
-)
-
-vim.api.nvim_create_user_command(
-    'Term',
-    function(opts)
-        spawn(opts, run_term);
-    end,
-    {
-        desc = 'Spawn a Terminal for general terminal commands'
-    }
-)
+create_terminal_command("Git", 'git');
+create_terminal_command("Run");
