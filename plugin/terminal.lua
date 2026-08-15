@@ -41,12 +41,13 @@ local function set_view(a, b)
 end
 
 
-local function spawn_or_switch(object, command, command_prefix)
+local function spawn_or_switch(object, command, command_prefix, name)
     if not view_equal(view_current(), object) then
         if in_list(vim.api.nvim_list_tabpages(), object.tab) then
             vim.cmd.normal(object.tab .. "gt"); 
         else
             vim.cmd('$tab split');
+            TAB_MAP[vim.api.nvim_get_current_tabpage()] = name;
         end
 
         if in_list(vim.api.nvim_list_bufs(), object.buffer) then
@@ -66,7 +67,7 @@ local function spawn_or_switch(object, command, command_prefix)
     end
 end
 
-local function create_terminal_command(name, prefix)
+function create_terminal_command(name, prefix)
     local obj = view_empty();
 
     if prefix == nil then
@@ -76,7 +77,7 @@ local function create_terminal_command(name, prefix)
     vim.api.nvim_create_user_command(
         name,
         function(opts)
-            spawn_or_switch(obj, opts.args, prefix);
+            spawn_or_switch(obj, opts.args, prefix, name);
         end,
         {
             nargs = "?",
@@ -84,6 +85,8 @@ local function create_terminal_command(name, prefix)
         }
     )
 end
+
+TAB_MAP = {};
 
 -- actual configuration 
 create_terminal_command("Git", 'git');
