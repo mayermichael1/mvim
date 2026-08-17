@@ -67,26 +67,28 @@ local function spawn_or_switch(object, command, command_prefix, name)
     end
 end
 
-function create_terminal_command(name, prefix)
-    local obj = view_empty();
-
-    if prefix == nil then
-        prefix = "";
-    end
-
-    vim.api.nvim_create_user_command(
-        name,
-        function(opts)
-            spawn_or_switch(obj, opts.args, prefix, name);
-        end,
-        {
-            nargs = "?",
-            desc = 'Spawn a Terminal for ' .. name .. ' commands'
-        }
-    )
-end
-
 TAB_MAP = {};
+
+function create_terminal_command(name, prefix)
+    if TAB_MAP[name] == nil then
+        TAB_MAP[name] = view_empty();
+
+        if prefix == nil then
+            prefix = "";
+        end
+
+        vim.api.nvim_create_user_command(
+            name,
+            function(opts)
+                spawn_or_switch(TAB_MAP[name], opts.args, prefix, name);
+            end,
+            {
+                nargs = "?",
+                desc = 'Spawn a Terminal for ' .. name .. ' commands'
+            }
+        )
+    end
+end
 
 -- actual configuration 
 create_terminal_command("Git", 'git');
