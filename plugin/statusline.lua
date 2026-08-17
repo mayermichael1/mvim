@@ -87,10 +87,10 @@ function tabline_builder()
         end
 
         -- if tab was set using a terminal command use Name from map;
-        local tabname = tab;
+        local tabname = "[" .. tab .. "]";
         for key, tab_mapping in pairs(TAB_MAP) do
             if tab_mapping.tab == tab then
-                tabname = tab .. ":"  .. key; 
+                tabname = "[" .. tab .. ":"  .. key .. "]"; 
             end
         end
 
