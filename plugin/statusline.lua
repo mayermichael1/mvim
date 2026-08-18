@@ -70,9 +70,12 @@ function statusline_builder()
         mode = 'IN';
     end
 
+    local buffer_modified = vim.opt_local.modified:get();
+
     line = line .. get_mode_higroup(mode, active, terminal);
     line = line .. get_mode_name(mode);
     line = line .. get_statusline_higroup(active, terminal);
+    line = line .. (buffer_modified and " M " or "   ");
     line = line .. " " .. vim.fn.expand('%');
     line = line .. "%=";
     line = line .. cursor[1] .. "," .. cursor[2] .. "/" .. vim.api.nvim_buf_line_count(0) .. " ";
