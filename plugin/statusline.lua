@@ -1,5 +1,6 @@
 -- status line 
 local modes = {
+  ['IN'] =  { text = "INACTIVE"       , higroup = "StatusLineNC"},
   ["n"] =   { text = "NORMAL "        , higroup = "StatusLine"},
   ["no"] =  { text = "NORMAL "        , higroup = "StatusLine"},
   ["v"] =   { text = "VISUAL "        , higroup = "Visual"},
@@ -20,59 +21,62 @@ local modes = {
   ["r?"] =  { text = "CONFIRM"        , higroup = "lCursor"},
   ["!"] =   { text = "SHELL  "        , higroup = "TermCursor"},
   ["t"] =   { text = "TERM   "        , higroup = "TermCursor"},
+  ["nt"] =  { text = "N-TERM "        , higroup = "StatusLine"},
 };
 
-local function mode()
-    return modes[vim.api.nvim_get_mode().mode].text;
+local function get_mode_name(mode)
+    local text = modes[mode]?.text ?? "";
+    return (" "..text.."                    "):sub(1,10);
 end
 
-local function mode_color()
-    local higroup = modes[vim.api.nvim_get_mode().mode].higroup;
-    if higroup == nil then
-        return "%#StatusLine#";
+local function get_statusline_higroup(active, terminal)
+    if terminal then
+        if active then
+            return "%#StatusLineTerm#";
+        else
+            return "%#StatusLineTermNC#";
+        end
     else
-        return "%#" .. modes[vim.api.nvim_get_mode().mode].higroup .. "#";
+        if active then
+            return "%#StatusLine#";
+        else
+            return "%#StatusLineNC#";
+        end
     end
 end
 
-local function set_statusline()
-    vim.opt.statusline = string.format("%s %s", mode_color(), mode());
+local function get_mode_higroup(mode, active, terminal)
+    local higroup = modes[mode]?.higroup;
+    if higroup == nil then
+        return get_statusline_higroup(active);
+    else
+        return "%#" .. higroup .. "#";
+    end
 end
 
-local function set_statusline_triggers()
-    vim.api.nvim_create_autocmd('ModeChanged', {
-        callback = function()
-            set_statusline();
-        end
-    })
-end
-
---set_statusline();
---set_stausline_triggers();k:w
-
-
--- function test()
---     return "abc";
--- end
-
---vim.opt.statusline = "%{%v:lua.test()%}"
---
-
--- TODO: make it work with terminals
 -- TODO: make it show when a buffer is not yet saved
--- TODO: do not show full file names but only from working dir
--- TODO: show inactive bar as inactive
---
+
 function statusline_builder() 
     local cursor = vim.api.nvim_win_get_cursor(0);
+    local mode = vim.api.nvim_get_mode().mode;
+
+    local active = vim.fn.win_getid() == tonumber(vim.g.actual_curwin);
+
+    local terminal = mode:find('t') ~= nil;
 
     local line = "";
-    line = line .. mode_color();
-    line = line .. " " .. mode() .. " ";
-    line = line .. "%#StatusLine#";
-    line = line .. " " .. vim.api.nvim_buf_get_name(0);
+
+    if not active then
+        mode = 'IN';
+    end
+
+    line = line .. get_mode_higroup(mode, active, terminal);
+    line = line .. get_mode_name(mode);
+    line = line .. get_statusline_higroup(active, terminal);
+    line = line .. " " .. vim.fn.expand('%');
     line = line .. "%=";
-    line = line .. cursor[1] .. ":" .. cursor[2] .. "/" .. vim.api.nvim_buf_line_count(0) .. " ";
+    line = line .. cursor[1] .. "," .. cursor[2] .. "/" .. vim.api.nvim_buf_line_count(0) .. " ";
+
     return line;
 end
 
@@ -104,5 +108,5 @@ function tabline_builder()
 end
 
 vim.opt.tabline = "%{%v:lua.tabline_builder()%}";
---vim.opt.statusline = "%{%v:lua.statusline_builder()%}";
+vim.opt.statusline = "%{%v:lua.statusline_builder()%}";
 
