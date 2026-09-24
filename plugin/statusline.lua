@@ -25,7 +25,11 @@ local modes = {
 };
 
 local function get_mode_name(mode)
-    local text = modes[mode]?.text ?? "";
+    local modeobj = modes[mode];
+    local text = "";
+    if modeobj ~= nil then
+        text = modeobj.text;
+    end
     return (" "..text.."                    "):sub(1,10);
 end
 
@@ -46,7 +50,14 @@ local function get_statusline_higroup(active, terminal)
 end
 
 local function get_mode_higroup(mode, active, terminal)
-    local higroup = modes[mode]?.higroup;
+    local modeobj = modes[mode];
+
+    local higroup = nil;
+
+    if modeobj ~= nil then
+        higroup = modeobj.higroup;
+    end
+
     if higroup == nil then
         return get_statusline_higroup(active);
     else
