@@ -7,9 +7,7 @@ vim.opt.expandtab = true        -- use spaces instead of tabs
 vim.opt.hlsearch = true 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
--- try without for a while 
--- should give a better overview over the current projects structure 
--- vim.opt.path:append({"**"})
+vim.opt.path:append({"**"})
 
 -- mouse
 vim.opt.mouse=""
