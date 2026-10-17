@@ -8,6 +8,7 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.path:append({"**"})
+vim.opt.wildignore:append({"*/doc/*", "*/build/*", "*/.git/*"})
 
 -- mouse
 vim.opt.mouse=""
