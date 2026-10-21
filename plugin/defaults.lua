@@ -9,6 +9,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.path:append({"**"})
 vim.opt.wildignore:append({"*/build/*", "*/.git/*"})
+vim.opt.completeopt:append({"fuzzy"})
 
 -- mouse
 vim.opt.mouse=""
