@@ -11,7 +11,7 @@ local opts = {buffer = 0}
 -- General snippets
 
 vim.snippet.add(
-    "\\e",
+    "entity",
 [=[
 entity $1 is
     generic 
@@ -26,7 +26,7 @@ end entity $1;]=]
 );
 
 vim.snippet.add(
-    "\\a",
+    "architecture",
 [=[
 architecture $1 of $2 is
 begin
